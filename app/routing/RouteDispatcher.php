@@ -33,7 +33,7 @@ class RouteDispatcher
 
           call_user_func_array(
             [new $this->controller, $this->method], 
-            [$this->$match['params']]
+            [$this->match['params']]
           );
 
         } else {
@@ -43,7 +43,7 @@ class RouteDispatcher
     } else {
       header($_SERVER['SERVER_PROTOCOL'] . '404 Not Found');
         // echo "Page Not found";
-        view('error/404');
+        view('errors/404');
 
     }
 
