@@ -10,6 +10,8 @@ require_once __DIR__ . './../app/config/_env.php';
 // Instantiate database class
 new \App\Classes\Database();
 
-require_once __DIR__ . '/../app/routing/routes.php';
+// set custom error handler
+set_error_handler([new \App\Classes\ErrorHandler(), 'handleErrors']);
 
+require_once __DIR__ . '/../app/routing/routes.php';
 new \App\RouteDispatcher($router);

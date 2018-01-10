@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  email body <?php echo $data; ?>
+  email body <?php echo $data ?>
   
 </body>
 </html>
