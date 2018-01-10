@@ -9,5 +9,5 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 $category = Capsule::table('categories')->get();
 
-echo '<pre>';
-var_dump($category->toArray());
+// echo '<pre>';
+// var_dump($category->toArray());
