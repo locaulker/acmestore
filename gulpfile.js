@@ -27,7 +27,11 @@ elixir(function(mix) {
       bowerPath + '/foundation-sites/dist/js/foundation.min.js',
 
       // pother-dependencies: slick-carousel
-      bowerPath + '/slick-carousel/slick/slick.min.js'
+      bowerPath + '/slick-carousel/slick/slick.min.js',
+
+      // Others
+      'js/*.js',
+
     ], 'public/js/bundle.js', 'resources/assets'
   );
 });
