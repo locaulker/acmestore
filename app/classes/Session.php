@@ -23,12 +23,22 @@ class Session
   }
 
   // get value from session
+  /**
+   * get
+   * @param mixed $name 
+   * @return mixed 
+   */
   public static function get($name)
   {
     return $_SESSION[$name];
   }
 
   // check if session exists
+  /**
+   * has
+   * @param mixed $name 
+   * @return mixed 
+   */
   public static function has($name)
   {
     if($name != '' && !empty($name)) {
@@ -38,6 +48,10 @@ class Session
     throw new \Exception('Name is required');
   }
 
+  /**
+   * 
+   * @var mixed
+   */
   // remove session
   public static function remove($name)
   {
