@@ -14,6 +14,14 @@
 
       {{ \App\Classes\Session::get('token') }}
 
+      <br>
+
+      {{ \App\Classes\Redirect::to('/') }}
+
+      <br>
+
+      {{ $_SERVER['REQUEST_URI'] }}
+
     </div>
   </div>
 @endsection
