@@ -36,7 +36,7 @@ class UploadFile
 
     $name = strtolower(str_replace(['_', ' '], '-', $name));
     $hash = md5(microtime());
-    $ext = $this->fileExtension();
+    $ext = $this->fileExtension($file);
 
     $this->filename = "{$name}-{$hash}.{$ext}";
 
@@ -98,6 +98,38 @@ class UploadFile
   public function path()
   {
     return $this->path;
+  }
+
+
+
+  /**
+   * move this file to the intended location
+   * @param mixed $temp_path 
+   * @param mixed $folder 
+   * @param mixed $file 
+   * @param mixed $new_filename 
+   * @return mixed 
+   */
+  public static function move($temp_path, $folder, $file, $new_filename)
+  {
+    $fileObj = new static;
+    $ds = DIRECTORY_SEPARATOR;
+
+    $fileObj->setName($file, $new_filename);
+    $file_name = $fileObj->getName();
+
+    if(!is_dir($folder)) {
+      mkdir($folder, 0777, true);
+    }
+
+    $fileObj->path = "{$folder}{$ds}{$file_name}";
+
+    $absolute_path = BASE_PATH . "{$ds}public{$ds}$fieldObj->path";
+
+    if(move_uploaded_file($temp_path, $absolute_path)) {
+      return fileObjec;
+    }
+      return null;
   }
 
 }
